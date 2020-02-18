@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>アルバムレビュー</title>
+    <title>iReviews</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,21 +12,23 @@
   <body>
     <header>
       <h1 class="header-logo"><a href="/">iReviews</a></h1>
-      <%= form_tag('/', method: :get) do %>
-        <input class="search-engine" name="keyword" placeholder="検索" type="text" value=""><button class="serach-btn" title="検索" type="submit"><i class="icon-search"></i></button></input>
-      <% end %>
-      <% if user_signed_in? %>
-        <div class="header_menu">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          <a href="#">マイページ</a>
-          <a href="#">レビューを書く</a>
-        </div>
-      <% else %>
-        <div class="header_menu">
-          <%= link_to "会員登録", new_user_registration_path %>
-          <%= link_to "ログイン", new_user_session_path %>
-        </div>
-      <% end %>
+      <div class="header-item">
+        <%= form_tag('/', method: :get) do %>
+          <input class="search-engine" name="keyword" placeholder="検索" type="text" value=""><button class="serach-btn" title="検索" type="submit"><i class="icon-search"></i></button></input>
+        <% end %>
+        <% if user_signed_in? %>
+          <div class="header_menu">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <a href="#">マイページ</a>
+            <a href="#">レビューを書く</a>
+          </div>
+        <% else %>
+          <div class="header_menu">
+            <button class="header-btn"><%= link_to "ログイン", new_user_session_path %></button>
+            <button class="header-btn"><%= link_to "新規会員登録", new_user_registration_path %></button>
+          </div>
+        <% end %>
+      </div>
     </header>
     
     <div class="side-menu"></div>
