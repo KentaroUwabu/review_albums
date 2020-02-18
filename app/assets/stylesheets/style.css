@@ -1,0 +1,36 @@
+header{
+  height: 100px;
+  background-color: #99aabb;
+  padding: 10px;
+}
+
+.header-logo{
+  float: left;
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.header-logo a{
+  color: white;
+  text-decoration: none;
+}
+
+.header-item{
+  float: right;
+  display: flex;
+}
+
+.header-btn{
+  height: 30px;
+  background-color: #444444;
+  border-radius: 5px;
+}
+
+.header-btn:hover{
+  opacity: 0.7;
+}
+
+.header-btn a{
+  color: white;
+  text-decoration: none;
+}
