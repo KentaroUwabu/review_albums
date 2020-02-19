@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -14,16 +15,16 @@
       <h1 class="header-logo"><a href="/">iReviews</a></h1>
       <div class="header-item">
         <%= form_tag('/', method: :get) do %>
-          <input class="search-engine" name="keyword" placeholder="検索" type="text" value=""><button class="serach-btn" title="検索" type="submit"><i class="icon-search"></i></button></input>
+          <input class="search-engine" name="keyword" placeholder="検索" type="text" value=""><button class="search-btn" title="検索" type="submit"><i class="fa fa-search"></i></button></input>
         <% end %>
         <% if user_signed_in? %>
-          <div class="header_menu">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            <a href="#">マイページ</a>
-            <a href="#">レビューを書く</a>
+          <div class="header-menu">
+            <p>ログインユーザー：<a class="header-nickname" href="#">うわぶ</a></p>
+            <button class="header-btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
+            <button class="header-btn"><a href="#">レビューを書く</a></button>
           </div>
         <% else %>
-          <div class="header_menu">
+          <div class="header-menu">
             <button class="header-btn"><%= link_to "ログイン", new_user_session_path %></button>
             <button class="header-btn"><%= link_to "新規会員登録", new_user_registration_path %></button>
           </div>
@@ -31,12 +32,7 @@
       </div>
     </header>
     
-    <div class="side-menu"></div>
-    
-    <div class="contents">
       <%= yield %>
-    </div>
-    
-    <footer></footer>
+      
   </body>
 </html>
