@@ -30,7 +30,7 @@ header{
   
   height: 20px;
   width: 300px;
-  margin:0 5px 0 200px;
+  margin:0 5px 0 50px;
 }
 
 .search-btn{
@@ -42,7 +42,7 @@ header{
 
 .header-menu{
   display: flex;
-  margin-left: 170px;
+  margin-left: 20px;
 }
 
 .header-menu p{
@@ -67,5 +67,5 @@ header{
 
 .header-nickname{
   color: black;
-  text-decoration: none;
+  text-decoration: none；
 }
