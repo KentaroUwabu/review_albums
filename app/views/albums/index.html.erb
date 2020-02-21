@@ -1,0 +1,13 @@
+<div class="main-contents-wrapper">
+  <div class="main-contents">
+    <h3 class="main-text">投稿されたレビュー</h3>
+    <ul class="main-albums-list">
+      <% @albums.each do |album| %>
+        <li>
+          <a href="#"><div class="thumnail-image" style="background-image: url(<%= album.image %>)"></div></a>
+          <h5>「<%= album.title %>」</h5>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
