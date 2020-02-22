@@ -4,7 +4,7 @@
     <ul class="main-albums-list">
       <% @albums.each do |album| %>
         <li>
-          <a href="#"><div class="thumnail-image" style="background-image: url(<%= album.image %>)"></div></a>
+          <img src="<%= "/album_images/#{album.image}" %>">
           <h5>「<%= album.title %>」</h5>
         </li>
       <% end %>
