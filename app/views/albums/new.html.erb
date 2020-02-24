@@ -1,17 +1,17 @@
 <div class="main-contents-wrapper">
   <div class="main-contents">
     <h2>アルバムを登録しよう</h2>
-    <%= form_for(@album, {multipart: true}) do |f| %>
+    <%= form_tag("/albums", {multipart: true}) do %>
       <div class="form-section">
-        <%= f.label :アルバムタイトル %>
-        <%= f.text_field :title, placeholder: 'アルバムタイトル', value: '' %>
+        <p>作品名</p>
+        <input type="text" name="title" value="<%= @album.title %>" placeholder="アルバムタイトル">
       </div>
       <div class="form-section">
-        <%= f.label :アルバムジャケット画像 %>
-        <%= f.file_field :image, placeholder: '画像アップロード' %>
+        <p>ジャケット画像</p>
+        <input name="image" type="file">
       </div>
       <div class="form-section">
-        <%= f.submit "アルバム登録" %>
+        <input type="submit" value="登録">
       </div>
     <% end %>
   </div>
