@@ -21,7 +21,7 @@
           <div class="header-menu">
             <p>ログインユーザー：<a class="header-nickname" href="#"><%= current_user.nickname %></a></p>
             <button class="header-btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
-            <button class="header-btn"><a href="#">レビューを書く</a></button>
+            <button class="header-btn"><a href="/albums/new">レビューを書く</a></button>
           </div>
         <% else %>
           <div class="header-menu">
