@@ -22,7 +22,7 @@ class AlbumsController < ApplicationController
         @album.image = "default.jpg"
       end
       @album.save
-      redirect_to("/")
+      redirect_to("/reviews/new")
     else
       render("albums/new")
     end
