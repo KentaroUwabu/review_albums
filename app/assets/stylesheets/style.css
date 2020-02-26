@@ -3,7 +3,9 @@
 }
 
 header{
+  position: fixed;
   height: 80px;
+  width: 100%;
   background-color: #99aabb;
   padding: 10px;
   min-width: 1000px;
@@ -75,6 +77,14 @@ header{
   text-decoration: none；
 }
 
+.main-contents-wrapper{
+  overflow: scroll;
+}
+
+.main-albums-list{
+  padding-top: 90px;
+}
+
 .main-albums-list li{
   float: left;
   list-style: none;
@@ -84,5 +94,4 @@ header{
 .album-jacket img{
   height: 40vh;
   width: 23vw;
-  padding: 20px;
 }
