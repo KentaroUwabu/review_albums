@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
   
   def new
-    @album = Album.find_by(id: params[:album_id])
     @review = Review.new
   end
   
