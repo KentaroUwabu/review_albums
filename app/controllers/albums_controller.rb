@@ -10,18 +10,9 @@ class AlbumsController < ApplicationController
   end
   
   def create
-    @artist = Artiest.new(
-      id: params[:id],
-      name: params[:name]
-    )
-    unless @artist.exists(name: params[:name])
-      @artist.save
-    end
-    
     @album = Album.new(
       id: params[:id],
       title: params[:title],
-      artist_id: @artist.id
     )
     if @album.save
       if params[:image]
