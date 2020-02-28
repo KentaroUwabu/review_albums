@@ -6,13 +6,13 @@ class AlbumsController < ApplicationController
   
   def new
     @album = Album.new
-    @artist = Artist.new
   end
   
   def create
     @album = Album.new(
       id: params[:id],
       title: params[:title],
+      artist_id: session[:artist_id]
     )
     if @album.save
       if params[:image]
