@@ -5,7 +5,7 @@
       <p>評価</p>
       <input type="number" name="rate" placeholder="評価" max="5" min="0" value="0">
       <p>レビュー内容</p>
-      <textarea name="letter" value="<%= @review.letter %>" placeholder="ここにレビューを書く"></textarea>
+      <textarea name="letter" placeholder="ここにレビューを書く"><%= @review.letter %></textarea>
       <input type="submit" value="投稿">
     <% end %>
   </div>

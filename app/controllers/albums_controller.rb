@@ -15,6 +15,7 @@ class AlbumsController < ApplicationController
       artist_id: session[:artist_id]
     )
     if @album.save
+      session[:album_id] = @album.id
       if params[:image]
         @album.image_name = "#{@album.id}.jpg"
         image = params[:image]
@@ -23,7 +24,7 @@ class AlbumsController < ApplicationController
         @album.image_name = "default.jpg"
       end
       @album.save
-      redirect_to("/")
+      redirect_to("/reviews/new")
     else
       render("albums/new")
     end
