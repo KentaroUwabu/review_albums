@@ -6,10 +6,9 @@ class ReviewsController < ApplicationController
   
   def create
     @review = Review.new(
-      title: params[:title],
       letter: params[:letter],
       rate: params[:rate],
-      album_id: @album.id,
+      album_id: session[:album_id],
       user_id: current_user.id
     )
     if @review.save
