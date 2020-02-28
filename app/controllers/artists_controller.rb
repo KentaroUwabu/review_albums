@@ -10,6 +10,7 @@ class ArtistsController < ApplicationController
       name: params[:name]
     )
     if @artist.save
+      session[:artist_id] = @artist.id
       redirect_to("/albums/new")
     else
       render("artists/new")
