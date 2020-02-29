@@ -4,7 +4,6 @@
       <% @albums.each do |album| %>
         <li>
           <a class="album-jacket" href="<%= "/albums/#{album.id}" %>"><img src="<%= "/album_images/#{album.image_name}" %>"></a>
-          <h5 class="album-title">「<%= album.title %>」</h5>
         </li>
       <% end %>
     </ul>
