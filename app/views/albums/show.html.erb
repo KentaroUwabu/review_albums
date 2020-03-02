@@ -1,14 +1,15 @@
 <div class="main-contents-wrapper">
   <div class="main-contents">
     <h2 class="album-show-title">
-      <%= link_to(@album.artist.name, "#", class: "show-album-artist") %>／
+      <%= @album.artist.name %>／
       <%= @album.title %>
     </h2>
     <div class="show-wrapper">
       <img src="<%= "/album_images/#{@album.image_name}" %>" class="album-show-jacket">
-      <% @album.reviews.each do |review| %>
-        <p class="album-review"><%= simple_format(review.letter) %></p>
-      <% end %>
+        <p class="album-review"><%= simple_format(@album.review.letter) %></p>
     </div>
+    <% if @album.review.user_id == current_user.id %>
+      <%= link_to("削除", "/albums/#{@album.id}", {method: "delete"}) %>
+    <% end %>
   </div>
 </div>
