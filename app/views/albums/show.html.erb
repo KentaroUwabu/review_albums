@@ -1,10 +1,13 @@
 <div class="main-contents-wrapper">
   <div class="main-contents">
-    <h2 class="album-show-title"><%= @album.artist.name %>／<%= @album.title %></h2>
+    <h2 class="album-show-title">
+      <%= link_to(@album.artist.name, "#", class: "show-album-artist") %>／
+      <%= @album.title %>
+    </h2>
     <div class="show-wrapper">
       <img src="<%= "/album_images/#{@album.image_name}" %>" class="album-show-jacket">
       <% @album.reviews.each do |review| %>
-        <p><%= review.letter %></p>
+        <p class="album-review"><%= simple_format(review.letter) %></p>
       <% end %>
     </div>
   </div>
