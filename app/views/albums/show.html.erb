@@ -9,6 +9,7 @@
         <p class="album-review"><%= simple_format(@album.review.letter) %></p>
     </div>
     <% if @album.review.user_id == current_user.id %>
+      <%= link_to("編集", "/albums/#{@album.id}/edit") %>
       <%= link_to("削除", "/albums/#{@album.id}", {method: "delete"}) %>
     <% end %>
   </div>

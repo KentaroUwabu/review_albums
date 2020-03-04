@@ -1,0 +1,23 @@
+<div class="main-contents-wrapper">
+  <div class="main-contents">
+    <%= form_tag("/albums/#{@album.id}", {method: "patch"}) do %>
+      <div class="form-section">
+        <p>アーティスト</p>
+        <input type="text" name="name" value="<%= @album.artist.name %>" placeholder="アーティスト名" autofocus="true">
+      </div>
+      <div class="form-section">
+        <p>アルバムタイトル</p>
+        <input type="text" name="title" value="<%= @album.title %>" placeholder="アルバムタイトル">
+      </div>
+      <div>
+        <p>アルバム評価</p>
+        <input type="number" name="rate" placeholder="評価" max="5" min="0" value="<%= @album.review.rate %>">
+      </div>
+      <div class="form-section">
+        <p>レビュー本文</p>
+        <textarea name="letter" placeholder="ここにレビューを書く"><%= @album.review.letter %></textarea>
+      </div>
+      <input type="submit" value="編集する">
+    <% end %>
+  </div>
+</div>
