@@ -2,10 +2,14 @@
   <div class="main-contents">
     <h2>レビューを書こう</h2>
     <%= form_tag("/reviews") do %>
-      <p>評価</p>
-      <input type="number" name="rate" placeholder="評価" max="5" min="0" value="0">
-      <p>レビュー内容</p>
-      <textarea name="letter" placeholder="ここにレビューを書く"><%= @review.letter %></textarea>
+      <div class="form-section">
+        <p>アルバム評価</p>
+        <input type="number" name="rate" placeholder="評価" max="5" min="0" value="0">
+      </div>
+      <div class="form-section">
+        <p>レビュー本文</p>
+        <textarea name="letter" placeholder="ここにレビューを書く"><%= @review.letter %></textarea>
+      </div>
       <input type="submit" value="投稿">
     <% end %>
   </div>
