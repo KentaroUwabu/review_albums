@@ -42,4 +42,23 @@ class AlbumsController < ApplicationController
     redirect_to("/")
   end
   
+  def edit
+    @album = Album.find_by(id: params[:id])
+  end
+  
+  def update
+    @album = Album.find_by(id: params[:id])
+    @album.title = params[:title]
+    @album.artist.name = params[:name]
+    @album.review.letter = params[:letter]
+    @album.review.rate = params[:rate]
+    if @album.save
+      @album.artist.save
+      @album.review.save
+      redirect_to("/")
+    else
+      render("albums/edit")
+    end
+  end
+  
 end
