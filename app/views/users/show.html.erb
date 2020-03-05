@@ -1,0 +1,16 @@
+<div class="main-contents-wrapper">
+  <div class="main-contents">
+    <% if user_signed_in? && current_user.id == @user.id %>
+      <h2>マイページ</h2>
+    <% else %>
+      <h2><%= @user.nickname %>さんの投稿一覧</h2>
+    <% end %>
+    <ul class="main-albums-list">
+      <% @user.reviews.each do |review| %>
+        <li>
+          <a class="album-jacket" href="<%= "/albums/#{review.album.id}" %>"><img src="<%= "/album_images/#{review.album.image_name}" %>"></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
