@@ -1,0 +1,12 @@
+<div class="main-contents-wrapper">
+  <div class="main-contents">
+    <h2><%= @artist.name %>のアルバムレビュー<h2>
+    <ul class="main-albums-list">
+      <% @albums.each do |album| %>
+        <li>
+          <a class="album-jacket" href="<%= "/albums/#{album.id}" %>"><img src="<%= "/album_images/#{album.image_name}" %>"></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

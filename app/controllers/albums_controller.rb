@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
   
   def index
-    @albums = Album.all.order(updated_at: :desc)
+    @albums = Album.all.order(created_at: :desc)
   end
   
   def new
