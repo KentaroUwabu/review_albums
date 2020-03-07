@@ -122,3 +122,18 @@ header{
 .album-review{
   padding-left: 50px;
 }
+
+/*ここからloginページのCSS*/
+.login-signup-wrapper{
+  height: 500px;
+  width: 400px;
+  margin: 50px 0 0 500px;
+}
+
+.field{
+  margin: 10px;
+}
+
+.actions{
+  margin-bottom: 10px;
+}
