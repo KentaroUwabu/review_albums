@@ -9,7 +9,7 @@
         <p class="album-review"><%= simple_format(@album.review.letter) %></p>
     </div>
     <p>投稿者：<%= link_to(@album.review.user.nickname, "/users/#{@album.review.user.id}") %></p>
-    <% if @album.review.user_id == current_user.id %>
+    <% if user_signed_in? && @album.review.user_id == current_user.id %>
       <%= link_to("編集", "/albums/#{@album.id}/edit") %>
       <%= link_to("削除", "/albums/#{@album.id}", {method: "delete"}) %>
     <% end %>
