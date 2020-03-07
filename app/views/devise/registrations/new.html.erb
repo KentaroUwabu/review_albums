@@ -1,37 +1,39 @@
 <div class="main-contents-warapper">
   <div class="main-contents">
-    <h2>Sign up</h2>
+    <div class="login-signup-wrapper">
+      <h2>会員登録</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
       
-      <div class="field">
-        <%= f.label :ニックネーム%><br />
-        <%= f.text_field :nickname, autofocus: true %>
-      </div>
+        <div class="field">
+          <%= f.label :ニックネーム%><br />
+          <%= f.text_field :nickname, autofocus: true %>
+        </div>
 
-      <div class="field">
-        <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email, autocomplete: "email" %>
-      </div>
+        <div class="field">
+          <%= f.label :メールアドレス %><br />
+          <%= f.email_field :email, autocomplete: "email" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :パスワード %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> 文字以上)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
+        <div class="field">
+          <%= f.label :パスワード %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> 文字以上)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :パスワード（確認用）%><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
+        <div class="field">
+          <%= f.label :パスワード（確認用）%><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
 
-      <div class="actions">
-        <%= f.submit "会員登録" %>
-      </div>
-    <% end %>
+        <div class="actions">
+          <%= f.submit "会員登録" %>
+        </div>
+      <% end %>
+    </div>
     
   </div>
 </div>
