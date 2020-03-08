@@ -1,0 +1,11 @@
+<div class="main-contents-wrapper">
+  <div class="main-contents">
+    <ul class="artists-list">
+      <% @artists.each do |artist| %>
+        <li>
+          <%= link_to(artist.name, "/artists/#{artist.id}") %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
