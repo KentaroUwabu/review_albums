@@ -27,4 +27,9 @@ class ArtistsController < ApplicationController
     @albums = @artist.albums.order(created_at: :desc)
   end
   
+  def index
+    keyword = params[:keyword]
+    @artists = Artist.find_by_sql(["select * from artists where name like ?", keyword])
+  end
+  
 end

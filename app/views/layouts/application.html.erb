@@ -15,8 +15,9 @@
     <header>
       <h1 class="header-logo"><a href="/">iReviews</a></h1>
       <div class="header-item">
-        <%= form_tag('/', method: :get) do %>
-          <input class="search-engine" name="keyword" placeholder="検索" type="text" value=""><button class="search-btn" title="検索" type="submit"><i class="fa fa-search"></i></button></input>
+        <%= form_tag("/artists", method: :get) do %>
+          <input class="search-engine" name="keyword" placeholder="アーティスト名で検索できます" type="text" value="">
+          <button class="search-btn" title="検索" type="submit"><i class="fa fa-search"></i></button>
         <% end %>
         <% if user_signed_in? %>
           <div class="header-menu">
