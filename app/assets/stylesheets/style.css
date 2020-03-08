@@ -167,3 +167,58 @@ header{
 .actions{
   margin-bottom: 10px;
 }
+
+/*各クラスnewページのCSS*/
+.new-logo{
+  margin-left: 50px;
+}
+
+.new-wrapper{
+  padding-left: 30px;
+}
+
+.text-line{
+  height: 30px;
+  width: 250px;
+  margin-left: 80px;
+}
+
+.form-section{
+  margin-bottom: 20px;
+}
+
+.form-section p{
+  margin-left: 100px;
+}
+
+.album-text-line{
+  margin-left: 120px;
+}
+
+.image-area{
+  margin-left: 120px;
+}
+
+.album-submit-btn{
+  margin-left: 370px;
+}
+
+.rate-area{
+  margin-left: 120px;
+  height: 30px;
+  width: 50px;
+}
+
+.review-area{
+  margin-left: 120px;
+  height: 350px;
+  width: 750px;
+}
+
+.submit-btn:hover{
+  opacity: 0.5;
+}
+
+.review-submit-btn{
+  margin-left: 850px;
+}
