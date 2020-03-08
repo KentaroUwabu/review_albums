@@ -1,10 +1,11 @@
 <div class="main-contents-wrapper">
   <div class="main-contents">
-    <h2>アーティストを登録しよう</h2>
-    <%= form_tag("/artists") do %>
-      <p>アーティスト</p>
-      <input type="text" name="name" value="<%= @artist.name %>" placeholder="アーティスト名">
-      <input type="submit" value="アルバム登録へ">
-    <% end %>
+    <h2 class="new-logo">アーティストを登録しよう</h2>
+    <div class="new-wrapper">
+      <%= form_tag("/artists") do %>
+        <input class="text-line" type="text" name="name" value="<%= @artist.name %>" placeholder="アーティスト名">
+        <input class="submit-btn" type="submit" value="アルバム登録へ">
+      <% end %>
+    </div>
   </div>
 </div>
