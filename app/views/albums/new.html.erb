@@ -1,18 +1,20 @@
 <div class="main-contents-wrapper">
   <div class="main-contents">
-    <h2>アルバムを登録しよう！</h2>
-    <%= form_tag("/albums", {multipart: true}) do %>
-      <div class="form-section">
-        <p>作品名</p>
-        <input type="text" name="title" value="<%= @album.title %>" placeholder="アルバムタイトル">
-      </div>
-      <div class="form-section">
-        <p>ジャケット画像</p>
-        <input name="image" type="file">
-      </div>
-      <div class="form-section">
-        <input type="submit" value="登録">
-      </div>
-    <% end %>
+    <h2 class="new-logo">アルバムを登録しよう！</h2>
+    <div class="new-wrapper">
+      <%= form_tag("/albums", {multipart: true}) do %>
+        <div class="form-section">
+          <p>作品名</p>
+          <input class="text-line album-text-line" type="text" name="title" value="<%= @album.title %>" placeholder="アルバムタイトル">
+        </div>
+        <div class="form-section">
+          <p>ジャケット画像</p>
+          <input class="image-area" name="image" type="file">
+        </div>
+        <div class="form-section">
+          <input class="submit-btn album-submit-btn" type="submit" value="登録">
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
