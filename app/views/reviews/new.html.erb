@@ -1,16 +1,18 @@
 <div class="main-contents-wrapper">
   <div class="main-contents">
-    <h2>レビューを書こう</h2>
-    <%= form_tag("/reviews") do %>
-      <div class="form-section">
-        <p>アルバム評価</p>
-        <input type="number" name="rate" placeholder="評価" max="5" min="0" value="0">
-      </div>
-      <div class="form-section">
-        <p>レビュー本文</p>
-        <textarea name="letter" placeholder="ここにレビューを書く"><%= @review.letter %></textarea>
-      </div>
-      <input type="submit" value="投稿">
-    <% end %>
+    <h2 class="new-logo">レビューを書こう</h2>
+    <div class="new-wrapper">
+      <%= form_tag("/reviews") do %>
+        <div class="form-section">
+          <p>レート</p>
+          <input class="rate-area" type="number" name="rate" placeholder="評価" max="5" min="0" value="0">
+        </div>
+        <div class="form-section">
+          <p>レビュー本文</p>
+          <textarea class="review-area" name="letter" placeholder="ここにレビューを書く"><%= @review.letter %></textarea>
+        </div>
+        <input class="submit-btn review-submit-btn" type="submit" value="投稿">
+      <% end %>
+    </div>
   </div>
 </div>
