@@ -3,6 +3,29 @@
     <h2 class="albums-show-title">
       <%= link_to(@album.artist.name, "/artists/#{@album.artist.id}") %>／
       <%= @album.title %>
+      <span class="star-wrapper">
+        <% if @album.review.rate == 5 %>
+          <img src="/275-icon-free.jpg" class="star">
+          <img src="/275-icon-free.jpg" class="star">
+          <img src="/275-icon-free.jpg" class="star">
+          <img src="/275-icon-free.jpg" class="star">
+          <img src="/275-icon-free.jpg" class="star">
+        <% elsif @album.review.rate == 4 %>
+          <img src="/275-icon-free.jpg" class="star">
+          <img src="/275-icon-free.jpg" class="star">
+          <img src="/275-icon-free.jpg" class="star">
+          <img src="/275-icon-free.jpg" class="star">
+        <% elsif @album.review.rate == 3 %>
+          <img src="/275-icon-free.jpg" class="star">
+          <img src="/275-icon-free.jpg" class="star">
+          <img src="/275-icon-free.jpg" class="star">
+        <% elsif @album.review.rate == 2 %>
+          <img src="/275-icon-free.jpg" class="star">
+          <img src="/275-icon-free.jpg" class="star">
+        <% elsif @album.review.rate == 1 %>
+          <img src="/275-icon-free.jpg" class="star">
+        <% end %>
+      </span>
     </h2>
     <div class="show-wrapper">
       <img src="<%= "/album_images/#{@album.image_name}" %>" class="album-show-jacket">
