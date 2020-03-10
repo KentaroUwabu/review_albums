@@ -108,18 +108,27 @@ header{
   color: black;
 }
 
+.star-wrapper{
+  margin-left: 30px;
+}
+
+.star{
+  height: 30px;
+  width: 35px;
+}
+
 .show-wrapper{
   display: flex;
 }
 
 .album-show-jacket{
-  height: 400px;
-  width: 450px;
+  height: 360px;
+  width: 430px;
   margin-left: 100px;
 }
 
 .show-wrapper p{
-  height: 400px;
+  height: 360px;
   width: 390px;
   padding-left: 50px;
   font-size: 18px;
@@ -213,6 +222,7 @@ header{
   margin-left: 120px;
   height: 350px;
   width: 750px;
+  padding: 15px;
 }
 
 .submit-btn:hover{
@@ -221,4 +231,10 @@ header{
 
 .review-submit-btn{
   margin-left: 850px;
+}
+
+/*artistsのnewページのCSS*/
+.artists-list li{
+  font-size: 30px;
+  margin-left: 30px;
 }
