@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user
+  before_action :move_to_albums_index, {only: [:new, :create]}
   
   def new
     @review = Review.new
