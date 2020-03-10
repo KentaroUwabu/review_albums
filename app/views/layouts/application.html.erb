@@ -13,24 +13,26 @@
 
   <body>
     <header>
-      <h1 class="header-logo"><a href="/">iReviews</a></h1>
-      <div class="header-item">
-        <%= form_tag("/artists", method: :get) do %>
-          <input class="search-engine" name="keyword" placeholder="アーティスト名で検索できます" type="text" value="">
-          <button class="search-btn" title="検索" type="submit"><i class="fa fa-search"></i></button>
-        <% end %>
-        <% if user_signed_in? %>
-          <div class="header-menu">
-            <p>ログインユーザー：<a class="header-nickname" href="<%= "/users/#{current_user.id}" %>"><%= current_user.nickname %></a></p>
-            <button class="header-btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
-            <button class="header-btn"><a href="/artists/new">レビューを書く</a></button>
-          </div>
-        <% else %>
-          <div class="header-menu">
-            <button class="header-btn"><%= link_to "ログイン", new_user_session_path %></button>
-            <button class="header-btn"><%= link_to "新規会員登録", new_user_registration_path %></button>
-          </div>
-        <% end %>
+      <div class="header-wrapper">
+        <h1 class="header-logo"><a href="/">iReviews</a></h1>
+        <div class="header-item">
+          <%= form_tag("/artists", method: :get) do %>
+            <input class="search-engine" name="keyword" placeholder="アーティスト名で検索できます" type="text" value="">
+            <button class="search-btn" title="検索" type="submit"><i class="fa fa-search"></i></button>
+          <% end %>
+          <% if user_signed_in? %>
+            <div class="header-menu">
+              <p>ログインユーザー：<a class="header-nickname" href="<%= "/users/#{current_user.id}" %>"><%= current_user.nickname %></a></p>
+              <button class="header-btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
+              <button class="header-btn"><a href="/artists/new">レビューを書く</a></button>
+            </div>
+          <% else %>
+            <div class="header-menu">
+              <button class="header-btn"><%= link_to "ログイン", new_user_session_path %></button>
+              <button class="header-btn"><%= link_to "新規会員登録", new_user_registration_path %></button>
+            </div>
+          <% end %>
+        </div>
       </div>
     </header>
     
