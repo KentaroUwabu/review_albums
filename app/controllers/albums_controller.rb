@@ -1,4 +1,6 @@
 class AlbumsController < ApplicationController
+  before_action :authenticate_user, {only: [:new, :create, :destroy, :edit, :update]} 
+  before_action :move_to_albums_index, {only: [:new, :create]}
   
   def index
     @albums = Album.all.order(created_at: :desc)

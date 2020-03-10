@@ -1,4 +1,6 @@
 class ArtistsController < ApplicationController
+  before_action :authenticate_user, {only: [:new, :create]}
+  before_action :move_to_albums_index, {only: [:new, :create]}
   
   def new
     @artist = Artist.new
